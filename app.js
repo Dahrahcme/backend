@@ -1,24 +1,19 @@
-var express = require("express");
-var app = express();
+var http = require('http');
+// var myLogModule = require('./log.js')
+// var msg = require('./message.js')
+var maths = require('./number.js')
 
-app.get("/", (req, res)=>{
-    console.log("I am back, it is working now on app");
-    res.json({
-        One: {
-            name: "Adebayo Amoo",
-            nationlity: "Nigerian",
-            age: "40",
-            state: "Ogun"
-        },
-        Two: {
-            name: "Alao Akanni",
-            nationlity: "Nigerian",
-            age: "60",
-            state: "Oyo"
-        } 
-    })
-})
+var server = http.createServer(function(req, res){
+    console.log("My server is working");
+});
 
-app.listen(2000, ()=>{
-    console.log("Retrying the task");
-})
+// myLogModule.info('Node.js started.')
+// myLogModule.warning('Node.js is giving warnings.')
+// myLogModule.error('Node.js is giving errors.')
+
+// console.log(msg);
+
+console.log(maths.add(2,3));
+
+
+server.listen(5000);
